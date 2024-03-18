@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox</title>
+</head>
+<body>
+    <h2>Inbox</h2>
+    <h3>Received Messages:</h3>
+    {% for message in received_messages %}
+        <p>From: {{ message.sender.username }}</p>
+        <p>Content: {{ message.content }}</p>
+    {% endfor %}
+    <h3>Sent Messages:</h3>
+    {% for message in sent_messages %}
+        <p>To: {{ message.receiver.username }}</p>
+        <p>Content: {{ message.content }}</p>
+    {% endfor %}
+</body>
+</html>

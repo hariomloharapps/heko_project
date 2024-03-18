@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Messages</title>
+</head>
+<body>
+    <h2>Messages with {{ receiver_username }}</h2>
+    {% for message in messages %}
+        <p>From: {{ message.sender.username }}</p>
+        <p>Content: {{ message.content }}</p>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="content" placeholder="Message Content"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
